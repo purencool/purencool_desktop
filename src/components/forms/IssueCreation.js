@@ -63,21 +63,23 @@ class IssueCreation extends Component {
 
       render() {
         return (
-        <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-            <div className="form-group">
+          <div id="IssueCreation" className="full-screen bg-color display-none" >
+            <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+              <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input type="text" className="form-control" />
-            </div>
-            <div className="form-group">
+              </div>
+              <div className="form-group">
                 <label htmlFor="title">Title</label>
                 <input type="text" className="form-control" aria-describedby="titleHelp" />
-            </div>
-            <div className="form-group">
+              </div>
+              <div className="form-group">
                 <label htmlFor="issue">Issue</label>
                 <textarea className="form-control" rows="5"></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+              </div>
+              <button type="submit" className="btn btn-primary">Submit</button>
+           </form>
+        </div>
         );
       }
 }
