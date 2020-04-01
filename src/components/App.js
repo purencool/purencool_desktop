@@ -6,6 +6,8 @@ import Shell from 'shelljs';
 
 import HeaderNav from './parts/HeaderNav'
 import SideBar from './parts/SideBar'
+import IssueCreation from "./forms/IssueCreation"
+import BrowserWindowContainer from "./browser/BrowserWindowContainer"
 
 const app = remote.app;
 class App extends Component {
@@ -37,18 +39,21 @@ class App extends Component {
 
 
     return (
-      <div id="Layout">
-      
-         <div Class="row">
-         <HeaderNav/>
-         </div>
-         <div Class="row">
-         <div id="SideBar" Class="col-2">
-         <SideBar/>
-         </div>
-         <div id="MainWidow" Class="col-10">
-            Main window
-         </div>
+      <div id="Layout" className="">
+        <div className="col-1 no-porm">
+             <SideBar/>
+        </div>
+        <div className="col-11 no-porm">
+             <HeaderNav/>
+           <div id="MainWindow" className="">
+             <div id="MainWorkSpace" className="">
+               Main window
+               <BrowserWindowContainer />
+             </div>
+             <div id="Tools" className="">
+               <IssueCreation/>
+             </div>
+           </div>  
          </div>
       </div>
     );

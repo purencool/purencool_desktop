@@ -1,10 +1,13 @@
-'use strict'
+ 'use strict'
 
 // Import parts of electron to use
 const { app, BrowserWindow } = require('electron')
+const fs = require('fs')
 const path = require('path')
 const url = require('url')
+const os = require('os');
 const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer')
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -24,6 +27,9 @@ if (process.platform === 'win32') {
   app.commandLine.appendSwitch('force-device-scale-factor', '1')
 }
 
+/**
+ * 
+ */
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
@@ -34,6 +40,62 @@ function createWindow() {
       nodeIntegration: true
     }
   })
+
+
+  /**
+   * 
+   */
+  function pnc() {
+     console.log('Function is part of "app" so globally accessible...');
+     return true
+  }
+  pnc();
+
+
+ /**
+  *  docker run -it --publish=80:80  purencool/webservices:v1.0.3.2020 /bin/bash
+  *   
+  */
+  function webservices(){
+
+   }
+
+
+/**
+ 
+  *   
+  *   https://medium.com/@dakotaleemartinez/submitting-issues-using-the-github-api-61c80810a3fd
+  */
+  function createIssue(){
+
+  }
+
+  /**
+   * setup userHome
+   */
+  function userHome() {
+    let plateform = os.platform;
+    let userPath = '';
+     if(plateform === 'win32'){
+       userPath = process.env.USERPROFILE;
+     } else {
+      userPath = process.env.HOME;
+     }
+
+     let userPathDirectory = userPath+'/purencool_applications';
+    if (fs.existsSync(userPathDirectory)) {
+      console.log('user path exists');
+      console.log(userPathDirectory);
+      
+    } else {
+      console.log('user path does exists');
+      console.log(userPathDirectory);
+      fs.mkdirSync(userPathDirectory);
+    }
+    
+  }
+  userHome()
+
 
   // and load the index.html of the app.
   let indexPath
@@ -74,7 +136,118 @@ function createWindow() {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+  // Create menu
+  const { app, Menu } = require('electron')
+
+  const isMac = process.platform === 'darwin'
+
+  const template = [
+    // { role: 'appMenu' }
+    ...(isMac ? [{
+      label: app.name,
+      submenu: [
+        { role: 'about' },
+        { type: 'separator' },
+        { role: 'services' },
+        { type: 'separator' },
+        { role: 'hide' },
+        { role: 'hideothers' },
+        { role: 'unhide' },
+        { type: 'separator' },
+        { role: 'quit' }
+      ]
+    }] : []),
+    // { role: 'fileMenu' }
+    //{
+    //  label: 'File',
+  //    submenu: [
+    //    isMac ? { role: 'close' } : { role: 'quit' }
+  //    ]
+  //  },
+    // { role: 'editMenu' }
+    {
+      label: 'Edit',
+      submenu: [
+        { role: 'undo' },
+        { role: 'redo' },
+        { type: 'separator' },
+        { role: 'cut' },
+        { role: 'copy' },
+        { role: 'paste' },
+        ...(isMac ? [
+          { role: 'pasteAndMatchStyle' },
+          { role: 'delete' },
+          { role: 'selectAll' },
+          { type: 'separator' },
+          {
+            label: 'Speech',
+            submenu: [
+              { role: 'startspeaking' },
+              { role: 'stopspeaking' }
+            ]
+          }
+        ] : [
+          { role: 'delete' },
+          { type: 'separator' },
+          { role: 'selectAll' }
+        ])
+      ]
+    },
+    // { role: 'viewMenu' }
+    {
+      label: 'View',
+      submenu: [
+        { role: 'reload' },
+        { role: 'forcereload' },
+        { role: 'toggledevtools' },
+        { type: 'separator' },
+        { role: 'resetzoom' },
+        { role: 'zoomin' },
+        { role: 'zoomout' },
+        { type: 'separator' },
+        { role: 'togglefullscreen' }
+      ]
+    },
+    // { role: 'windowMenu' }
+    {
+      label: 'Window',
+      submenu: [
+        { role: 'minimize' },
+        { role: 'zoom' },
+        ...(isMac ? [
+          { type: 'separator' },
+          { role: 'front' },
+          { type: 'separator' },
+          { role: 'window' }
+        ] : [
+          { role: 'close' }
+        ])
+      ]
+    },
+    {
+      role: 'help',
+      submenu: [
+        {
+          label: 'Learn More',
+          click: async () => {
+            const { shell } = require('electron')
+            await shell.openExternal('https://electronjs.org')
+          }
+        }
+      ]
+    }
+  ]
+
+  const menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(menu)
+
 }
+
+
+
+
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -97,3 +270,19 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+
+
+
+/*
+app.readDir(myDir, function(dir) {
+  // es5
+  for(var i = 0, l = dir.length; i < l; i++) {
+    var filePath = dir[i];
+    console.log(filePath)
+  }
+  // es6
+  for(let filePath of dir) {
+    console.log(filePath);
+  }
+});*/

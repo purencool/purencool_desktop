@@ -24,6 +24,17 @@
 }
 
 #Layout{
-  padding-right: 0.9375rem;
-    padding-left: 0.9375rem;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+#SideBar{
+  height: 100%;
+  background-color: #111;
+}
+
+.no-porm{
+  padding: 0;
+  margin: 0;
 }

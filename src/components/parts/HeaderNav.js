@@ -5,7 +5,7 @@ class HeaderNav extends Component {
 
   render() {
     return (
-      <div id="HeaderNav" Class="col-12">
+      <div id="HeaderNav" >
       Header nav
       </div>
     );

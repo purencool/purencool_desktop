@@ -5830,6 +5830,25 @@ react-dom@^16.13.0:
     prop-types "^15.6.2"
     scheduler "^0.19.0"
 
+react-electron-browser-window@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-electron-browser-window/-/react-electron-browser-window-0.1.2.tgz#0fc9e963930ffdf4faa0a8e124c10c0041f42672"
+  integrity sha512-GQWKxd6NLbyWgjSmN8z2AbIW2trD+eylE21Pez8E53N9C/9MsOX0cpvcYVkzs4x2hSQO6oC+vrocYChllnXlYg==
+
+react-electron-web-view@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-electron-web-view/-/react-electron-web-view-2.0.1.tgz#984b7bbbeb77e35bcca921dc50120fc8f2b0f27d"
+  integrity sha1-mEt7u+t341vMqSHcUBIPyPKw8n0=
+  dependencies:
+    lodash.camelcase "^4.3.0"
+
+react-iframe@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/react-iframe/-/react-iframe-1.8.0.tgz#8c78f2c59b894ca5605fa7e45e61e27e57e96091"
+  integrity sha512-NYi89+rEqREwQxW9sDf+akh6/dtwWd3bOjByoVEIQ7SicOxVawRMer3pLdWjFaHXpuxTB9NqobPf/Ohj2iAKkg==
+  dependencies:
+    object-assign "^4.1.1"
+
 react-is@^16.6.0, react-is@^16.8.1:
   version "16.13.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.0.tgz#0f37c3613c34fe6b37cd7f763a0d6293ab15c527"

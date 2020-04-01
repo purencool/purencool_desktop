@@ -1,6 +1,6 @@
 {
-  "name": "purencool-desktop",
-  "version": "1.8.0",
+  "name": "purencool_desktop",
+  "version": "1.0",
   "description": "Minimal Electron.",
   "license": "MIT",
   "private": false,
@@ -53,6 +53,9 @@
     "node-powershell": "^4.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-electron-browser-window": "^0.1.2",
+    "react-electron-web-view": "^2.0.1",
+    "react-iframe": "^1.8.0",
     "react-terminal-component": "^1.4.1",
     "shelljs": "^0.8.3",
     "terminal-in-react": "^4.3.1"
