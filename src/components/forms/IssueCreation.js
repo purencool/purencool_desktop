@@ -7,30 +7,31 @@ class IssueCreation extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            username: '',
+            password: '',
+            key: '',
             title: '',
             body: ''
           }
+
+          this.handleSubmit = this.handleSubmit.bind(this);
       }
 
-      onNameChange(event) {
-        this.setState({name: event.target.value})
-      }
     
-      onEmailChange(event) {
-        this.setState({email: event.target.value})
-      }
-    
-      onMessageChange(event) {
-        this.setState({message: event.target.value})
-      }
-
-
-      
-     
       handleSubmit(event) {
         event.preventDefault();
-        console.log(event);
+        const jsonKeys = Object.keys(this.refs);
+        let obj = jsonKeys.reduce(function(acc, curr) {
+          acc[curr] = '';
+          return acc;
+        }, {});
+        for (var p in obj) {
+          if( obj.hasOwnProperty(p) ) {
+            obj[p] = this.refs[p].value
+          } 
+        }  
+        console.log(obj)
+    
       
       //async (event) => {
       //  event.preventDefault();
@@ -56,6 +57,9 @@ class IssueCreation extends Component {
         alert("Message failed to send.")
       }
     })
+
+
+    'username=pnc&key=pnc&password=pnc&product=purencool_studio&title=api_callaa&body=complete this test'
     */
 
 
@@ -63,21 +67,30 @@ class IssueCreation extends Component {
 
       render() {
         return (
-          <div id="IssueCreation" className="full-screen bg-color display-none" >
-            <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+          <div id="IssueCreation" className="full-screen bg-color display1-none" >
+            <form id="contact-form" onSubmit={this.handleSubmit}>
+              <input type="hidden" id="product" value="purencool_studio"/>
               <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input type="text" className="form-control" />
+                <label htmlFor="username">Username</label>
+                <input type="text" id="username" className="form-control" ref="username" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input type="text" id="password" className="form-control" ref="password" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="key">Key</label>
+                <input type="text" id="key" className="form-control" ref="key" />
               </div>
               <div className="form-group">
                 <label htmlFor="title">Title</label>
-                <input type="text" className="form-control" aria-describedby="titleHelp" />
+                <input type="text" id="title" className="form-control" ref="title" />
               </div>
               <div className="form-group">
                 <label htmlFor="issue">Issue</label>
-                <textarea className="form-control" rows="5"></textarea>
+                <textarea id="body" className="form-control" rows="5" ref="body"></textarea>
               </div>
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <input type="submit" value="Submit" className="btn btn-primary" />
            </form>
         </div>
         );
