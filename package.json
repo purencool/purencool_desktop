@@ -2,7 +2,7 @@
   "name": "electron-tabs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "loadwindow.js",
   "dependencies": {
     "bootstrap": "^4.4.1",
     "electron": "^4.2.12",
