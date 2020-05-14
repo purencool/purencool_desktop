@@ -1,76 +1,18 @@
+# electron-tabs
+Minimal application demonstrating how to create tabs in Electron.
 
-## Minimal Electron, React and Webpack boilerplate
+Install dependencies:
 
-
-### Table of contents
-
-* [Install](#install)
-* [Usage](#usage)
-* [Code of Conduct](#code-of-conduct)
-* [License](#license)
-
-### Install
-
-#### Clone this repo
-
-```
-git clone https://github.com/purencool/purencool_desktop.git
-```
-
-#### Install dependencies
-
-```
-npm install
-```
-or
 ```
 yarn
 ```
 
-### Usage
-
-#### Run the app
+Run demo:
 
 ```
-npm run start
-```
-or
-```
-yarn start
+yarn run start
 ```
 
-#### Build the app (automatic)
+Check out source code for details.
 
-```
-npm run package
-```
-or
-```
-yarn package
-```
-
-#### Build the app (manual)
-
-```
-npm run build
-```
-or
-```
-yarn build
-```
-
-#### Test the app (after `npm run build` || `yarn run build`)
-```
-npm run prod
-```
-```
-yarn prod
-```
-
-### Code of Conduct
-
-[Contributor Code of Conduct](code-of-conduct.md). By participating in this project you agree to abide by its terms.
-
-### License
-
-MIT © [Purencool](https://purencool.com).
+Read accompanied article here: http://electron.rocks/implementing-tabs-in-electron/
