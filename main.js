@@ -25,25 +25,12 @@ let browser = tabGroup.addTab({
     icon: 'fa fa-home',
     visible: true,
     closable: false,
-    active: true
 });
-
-let ide = tabGroup.addTab({
-    title: 'Ide',
-    src: './src/ide/ide.html',
-    webviewAttributes: {
-        'nodeintegration': true
-    },
-    icon: 'fa fa-home',
-    visible: true,
-    closable: false,
-    active: true
-});
-
 
 /**
  *  Menus
  */
+/*
 const { app, Menu } = require('electron')
 const isMac = process.platform === 'darwin'
 const template = [
@@ -145,6 +132,8 @@ const template = [
 
 const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
+*/
+
 
 
 

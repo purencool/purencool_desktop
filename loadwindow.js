@@ -4,13 +4,14 @@
 //https://www.youtube.com/watch?v=QD9hpiBZQvA
 // UI video https://www.youtube.com/watch?v=h6MB62_5zzQ
 // Import parts of electron to use
-const {app, BrowserWindow, ipcMain} = require('electron')
+const {app, BrowserWindow, shell ,  ipcMain} = require('electron')
 
 const fs = require('fs')
 const path = require('path')
 const url = require('url')
 const os = require('os');
 const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer')
+shell.openExternal('http://localhost:3000')
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -29,7 +30,7 @@ function createWindow () {
   }))
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {

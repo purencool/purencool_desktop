@@ -54,3 +54,10 @@ ehthumbs.db
 *.lnk
 
 .idea
+gen-webpack.config.js
+lib/*
+plugins/*
+src-gen/*
+yarn.lock
+package-lock.json
+
