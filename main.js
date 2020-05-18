@@ -6,7 +6,7 @@ const TabGroup = require('electron-tabs');
 let tabGroup = new TabGroup({});
 let sites = tabGroup.addTab({
     title: 'Sites',
-    src: './src/sites/sites.html',
+    src: './src/index.html?t=sites',
     webviewAttributes: {
         'nodeintegration': true
     },
@@ -18,7 +18,7 @@ let sites = tabGroup.addTab({
 
 let browser = tabGroup.addTab({
     title: 'Browser',
-    src: './src/browser/browser.html',
+    src: './src/index.html?t=browser',
     webviewAttributes: {
         'nodeintegration': true
     },

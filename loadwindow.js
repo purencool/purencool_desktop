@@ -11,7 +11,7 @@ const path = require('path')
 const url = require('url')
 const os = require('os');
 const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer')
-shell.openExternal('http://localhost:3000')
+//shell.openExternal('http://localhost:3000')
 
 
 // Keep a global reference of the window object, if you don't, the window will

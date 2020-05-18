@@ -16,3 +16,5 @@ yarn run start
 Check out source code for details.
 
 Read accompanied article here: http://electron.rocks/implementing-tabs-in-electron/
+
+ "start": "concurrently  \"theia start --plugins=local-dir:plugins\" \"electron .\"", 

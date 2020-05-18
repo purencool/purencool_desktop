@@ -16,6 +16,7 @@
     "@theia/preview": "next",
     "@theia/search-in-workspace": "next",
     "@theia/terminal": "next",
+    "@theia/php": "0.0.0",
     "concurrently": "^5.2.0",
     "electron": "4.2.12",
     "electron-tabs": "^0.15.0",
@@ -33,7 +34,7 @@
     "prepare": "yarn run clean && yarn build && yarn run download:plugins",
     "clean": "theia clean",
     "build": "theia build --mode development",
-    "start": "concurrently  \"theia start --plugins=local-dir:plugins\" \"electron .\"",
+    "start": "concurrently  \"electron .\"",
     "download:plugins": "theia download:plugins"
   },
   "theiaPluginsDir": "plugins",
@@ -48,6 +49,7 @@
     "vscode-buildin-php-language-features" : "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/php-language-features-1.39.1-prel.vsix",
     "vscode-builtin-scss": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/scss-1.39.1-prel.vsix",
     "vscode-builtin-typescript": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/typescript-1.39.1-prel.vsix",
-    "vscode-builtin-typescript-language-features": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/typescript-language-features-1.39.1-prel.vsix"
+    "vscode-builtin-typescript-language-features": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/typescript-language-features-1.39.1-prel.vsix",
+    "vscode-builtin-yaml" : "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/yaml-1.39.1-prel.vsix"
   }
 }
