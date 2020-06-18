@@ -10,7 +10,6 @@ const fs = require('fs')
 const path = require('path')
 const url = require('url')
 const os = require('os');
-const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer')
 //shell.openExternal('http://localhost:3000')
 
 
@@ -20,7 +19,10 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({
+      width: 800,
+      height: 600
+    })
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
@@ -30,7 +32,7 @@ function createWindow () {
   }))
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+ // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
@@ -61,11 +63,4 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
-})
-
-ipcMain.on('show-message', (event, msg) => {
-    if (mainWindow) {
-      mainWindow.webContents.send('show-message', msg);
-    }
-
 })

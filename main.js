@@ -2,6 +2,7 @@
  *  tabs
  * @type {ElectronTabs}
  */
+
 const TabGroup = require('electron-tabs');
 let tabGroup = new TabGroup({});
 let sites = tabGroup.addTab({
