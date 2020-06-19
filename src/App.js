@@ -3,7 +3,8 @@ import { Column, Row } from 'simple-flexbox';
 import { StyleSheet, css } from 'aphrodite';
 import SidebarComponent from './components/sidebar/SidebarComponent';
 import HeaderComponent from './components/header/HeaderComponent';
-import ContentComponent from './components/content/test_page/ContentComponent';
+import TestContentComponent from './components/content/test_page/ContentComponent';
+import SupportContentComponent from './components/content/support_page/ContentComponent';
 import './App.css';
 
 const styles = StyleSheet.create({
@@ -41,8 +42,16 @@ class App extends React.Component {
                 <SidebarComponent selectedItem={selectedItem} onChange={(selectedItem) => this.setState({ selectedItem })} />
                 <Column flexGrow={1} className={css(styles.mainBlock)}>
                     <HeaderComponent title={selectedItem} />
+
                     <div className={css(styles.content)}>
-                        <ContentComponent />
+                      {(() => {
+                         console.log(selectedItem);
+                        switch (selectedItem) {
+                          case "Tickets":   return  <TestContentComponent title={selectedItem} />;
+                          case "Support": return <SupportContentComponent title={selectedItem} />;
+                          default:      return "#FFFFFF";
+                        }
+                      })()}
                     </div>
                 </Column>
             </Row>
