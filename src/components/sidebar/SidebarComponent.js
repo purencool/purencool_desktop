@@ -3,10 +3,11 @@ import { Column, Row } from 'simple-flexbox';
 import { StyleSheet, css } from 'aphrodite';
 import LogoComponent from './LogoComponent';
 import MenuItemComponent from './MenuItemComponent';
-import IconOverview from '../../assets/icon-overview.js';
-import IconTickets from '../../assets/icon-tickets.js';
-import IconIdeas from '../../assets/icon-ideas.js';
-import IconSupport from '../../assets/icon-support.js';
+import IconOverview from '../../assets/icon-overview';
+import IconSites from '../../assets/icon-sites';
+import IconTickets from '../../assets/icon-tickets';
+import IconIdeas from '../../assets/icon-ideas';
+import IconSupport from '../../assets/icon-support';
 import IconAgents from '../../assets/icon-agents';
 import IconArticles from '../../assets/icon-articles';
 import IconSettings from '../../assets/icon-settings';
@@ -129,37 +130,26 @@ function SidebarComponent({ onChange, selectedItem }) {
                 >
                     <LogoComponent />
                     <Column className={css(styles.menuItemList)}>
-                        <MenuItemComponent
-                            title="Overview"
-                            icon={IconOverview}
-                            onClick={() => onItemClicked('Overview')}
-                            active={selectedItem === 'Overview'}
-                        />
+                      <MenuItemComponent
+                        title="Overview"
+                        icon={IconOverview}
+                        onClick={() => onItemClicked('Overview')}
+                        active={selectedItem === 'Overview'}
+                      />
+                      <MenuItemComponent
+                        title="Sites"
+                        icon={IconSites}
+                        onClick={() => onItemClicked('Sites')}
+                        active={selectedItem === 'Sites'}
+                      />
                         <MenuItemComponent
                             title="Tickets"
                             icon={IconTickets}
                             onClick={() => onItemClicked('Tickets')}
                             active={selectedItem === 'Tickets'}
                         />
-                        <MenuItemComponent
-                            title="Ideas"
-                            icon={IconIdeas}
-                            onClick={() => onItemClicked('Ideas')}
-                            active={selectedItem === 'Ideas'}
-                        />
 
-                        <MenuItemComponent
-                            title="Agents"
-                            icon={IconAgents}
-                            onClick={() => onItemClicked('Agents')}
-                            active={selectedItem === 'Agents'}
-                        />
-                        <MenuItemComponent
-                            title="Articles"
-                            icon={IconArticles}
-                            onClick={() => onItemClicked('Articles')}
-                            active={selectedItem === 'Articles'}
-                        />
+
                         <div className={css(styles.separator)}></div>
                         <MenuItemComponent
                             title="Settings"
