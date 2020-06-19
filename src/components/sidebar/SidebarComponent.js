@@ -3,16 +3,15 @@ import { Column, Row } from 'simple-flexbox';
 import { StyleSheet, css } from 'aphrodite';
 import LogoComponent from './LogoComponent';
 import MenuItemComponent from './MenuItemComponent';
-import IconOverview from '../../assets/icon-overview';
+import IconBurger from '../../assets/icon-burger';
 import IconSites from '../../assets/icon-sites';
-import IconTickets from '../../assets/icon-tickets';
-import IconIdeas from '../../assets/icon-ideas';
+
+/* menu items */
+import IconOverview from '../../assets/icon-overview';
 import IconSupport from '../../assets/icon-support';
-import IconAgents from '../../assets/icon-agents';
-import IconArticles from '../../assets/icon-articles';
 import IconSettings from '../../assets/icon-settings';
 import IconSubscription from '../../assets/icon-subscription';
-import IconBurger from '../../assets/icon-burger';
+
 
 const styles = StyleSheet.create({
     burgerIcon: {
@@ -142,12 +141,7 @@ function SidebarComponent({ onChange, selectedItem }) {
                         onClick={() => onItemClicked('Sites')}
                         active={selectedItem === 'Sites'}
                       />
-                        <MenuItemComponent
-                            title="Tickets"
-                            icon={IconTickets}
-                            onClick={() => onItemClicked('Tickets')}
-                            active={selectedItem === 'Tickets'}
-                        />
+
 
 
                         <div className={css(styles.separator)}></div>

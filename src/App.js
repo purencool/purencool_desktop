@@ -3,8 +3,8 @@ import { Column, Row } from 'simple-flexbox';
 import { StyleSheet, css } from 'aphrodite';
 import SidebarComponent from './components/sidebar/SidebarComponent';
 import HeaderComponent from './components/header/HeaderComponent';
-import TestContentComponent from './components/content/test_page/ContentComponent';
 import SupportContentComponent from './components/content/support_page/ContentComponent';
+import OverviewContentComponent from './components/content/overview_page/ContentComponent';
 import './App.css';
 
 const styles = StyleSheet.create({
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 
 class App extends React.Component {
 
-    state = { selectedItem: 'Tickets' };
+    state = { selectedItem: 'Overview' };
 
     componentDidMount() {
         window.addEventListener('resize', this.resize);
@@ -47,9 +47,9 @@ class App extends React.Component {
                       {(() => {
                          console.log(selectedItem);
                         switch (selectedItem) {
-                          case "Tickets":   return  <TestContentComponent title={selectedItem} />;
+                          case "Overview":   return  <OverviewContentComponent stitle={selectedItem} />;
                           case "Support": return <SupportContentComponent title={selectedItem} />;
-                          default:      return "#FFFFFF";
+                          default:      return <OverviewContentComponent title={selectedItem} />;
                         }
                       })()}
                     </div>
