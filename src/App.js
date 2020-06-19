@@ -3,7 +3,7 @@ import { Column, Row } from 'simple-flexbox';
 import { StyleSheet, css } from 'aphrodite';
 import SidebarComponent from './components/sidebar/SidebarComponent';
 import HeaderComponent from './components/header/HeaderComponent';
-import ContentComponent from './components/content/ContentComponent';
+import ContentComponent from './components/content/test_page/ContentComponent';
 import './App.css';
 
 const styles = StyleSheet.create({

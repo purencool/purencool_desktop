@@ -6,7 +6,7 @@ import MenuItemComponent from './MenuItemComponent';
 import IconOverview from '../../assets/icon-overview.js';
 import IconTickets from '../../assets/icon-tickets.js';
 import IconIdeas from '../../assets/icon-ideas.js';
-import IconContacts from '../../assets/icon-contacts';
+import IconSupport from '../../assets/icon-support.js';
 import IconAgents from '../../assets/icon-agents';
 import IconArticles from '../../assets/icon-articles';
 import IconSettings from '../../assets/icon-settings';
@@ -147,12 +147,7 @@ function SidebarComponent({ onChange, selectedItem }) {
                             onClick={() => onItemClicked('Ideas')}
                             active={selectedItem === 'Ideas'}
                         />
-                        <MenuItemComponent
-                            title="Contacts"
-                            icon={IconContacts}
-                            onClick={() => onItemClicked('Contacts')}
-                            active={selectedItem === 'Contacts'}
-                        />
+
                         <MenuItemComponent
                             title="Agents"
                             icon={IconAgents}
@@ -172,6 +167,12 @@ function SidebarComponent({ onChange, selectedItem }) {
                             onClick={() => onItemClicked('Settings')}
                             active={selectedItem === 'Settings'}
                         />
+                      <MenuItemComponent
+                        title="Support"
+                        icon={IconSupport}
+                        onClick={() => onItemClicked('Support')}
+                        active={selectedItem === 'Support'}
+                      />
                         <MenuItemComponent
                             title="Subscription"
                             icon={IconSubscription}
