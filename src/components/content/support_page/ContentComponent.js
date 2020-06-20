@@ -1,10 +1,7 @@
 import React from 'react';
 import { Column, Row } from 'simple-flexbox';
 import { StyleSheet, css } from 'aphrodite/no-important';
-import MiniCardComponent from './parts/MiniCardComponent';
-import TodayTrendsComponent from './parts/TodayTrendsComponent';
-import UnresolvedTicketsComponent from './parts/UnresolvedTicketsComponent';
-import TasksComponent from './parts/TasksComponent';
+import BugFormComponent from './parts/BugFormComponent';
 
 const styles = StyleSheet.create({
     cardsContainer: {
@@ -48,23 +45,8 @@ const styles = StyleSheet.create({
 function ContentComponent(props) {
     return (
         <Column>
-          {props.title}
-            <Row className={css(styles.cardsContainer)} wrap flexGrow={1} horizontal="space-between" breakpoints={{ 768: 'column' }}>
-                <Row className={css(styles.cardRow)} wrap flexGrow={1} horizontal="space-between" breakpoints={{ 384: 'column' }}>
-                    <MiniCardComponent className={css(styles.miniCardContainer)} title="Unresolved" value="60" />
-                    <MiniCardComponent className={css(styles.miniCardContainer)} title="Overdue" value="16" />
-                </Row>
-                <Row className={css(styles.cardRow)} wrap flexGrow={1} horizontal="space-between" breakpoints={{ 384: 'column' }}>
-                    <MiniCardComponent className={css(styles.miniCardContainer)} title="Open" value="43" />
-                    <MiniCardComponent className={css(styles.miniCardContainer)} title="On hold" value="64" />
-                </Row>
-            </Row>
-            <div className={css(styles.todayTrends)}>
-                <TodayTrendsComponent />
-            </div>
             <Row horizontal="space-between" className={css(styles.lastRow)} breakpoints={{ 1024: 'column' }}>
-                <UnresolvedTicketsComponent containerStyles={styles.unresolvedTickets} />
-                <TasksComponent containerStyles={styles.tasks} />
+              <BugFormComponent />
             </Row>
         </Column>
     );

@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 
 class App extends React.Component {
 
-    state = { selectedItem: 'Overview' };
+    state = { selectedItem: 'Support' };
 
     componentDidMount() {
         window.addEventListener('resize', this.resize);
