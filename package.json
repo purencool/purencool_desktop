@@ -18,7 +18,7 @@
     "bootstrap": "^4.5.0",
     "cross-env": "",
     "electron-is-dev": "",
-    "prop-types": "",
+    "prop-types": "^15.7.2",
     "react": "^16.0.0",
     "react-axios": "^2.0.3",
     "react-bootstrap": "^1.0.1",
