@@ -20,6 +20,7 @@
     "electron-is-dev": "",
     "prop-types": "",
     "react": "^16.0.0",
+    "react-axios": "^2.0.3",
     "react-bootstrap": "^1.0.1",
     "react-dom": "",
     "react-router-dom": "",
