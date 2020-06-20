@@ -5,30 +5,45 @@ import Form from "@rjsf/core";
 const postSchema = {
   type: "object",
   properties: {
-    title: {
-      title: "Title",
+    username: {
       type: "string",
       minLength: 10,
       maxLength: 140
     },
-    slug: {
-      title: "Slug",
+    password: {
       type: "string",
-      pattern: "^[a-z0-9-]+$"
+      minLength: 10,
+      maxLength: 140
     },
-    published: {
-      title: "Published",
+    title: {
       type: "string",
-      format: "date-time"
+      minLength: 10,
+      maxLength: 140
     },
-    content: {
-      title: "Content",
+
+    issue: {
       type: "string"
     }
   },
-  required: ["title", "slug", "published", "content"]
+  required: ["title",  "issue"]
 };
 
+const uiSchema = {
+  username: {
+    'ui:autofocus': true,
+    'ui:placeholder': 'username',
+    'ui:title': 'Username'
+  },
+  password: {
+    'ui:placeholder': 'password',
+    'ui:title': 'password'
+  },
+  title: {
+    'ui:placeholder': 'title',
+    'ui:title': 'title'
+  },
+  issue: { 'ui:widget': 'textarea', 'ui:options': { rows: 5 } }
+}
 
 
 
@@ -44,7 +59,7 @@ class CardComponent extends React.Component {
                 <Row horizontal="space-between">
                     <Column>
                         <Row>
-                          <Form onSubmit={this.onSubmit} schema={postSchema} />
+                          <Form onSubmit={this.onSubmit} schema={postSchema} uiSchema={uiSchema} />
                         </Row>
                     </Column>
                 </Row>
