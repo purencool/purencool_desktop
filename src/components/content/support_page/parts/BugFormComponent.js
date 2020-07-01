@@ -1,6 +1,7 @@
 import React from 'react';
 import { Column, Row } from 'simple-flexbox';
 import Form from "@rjsf/core";
+import RestRequest from "../../../../api/rest_calls/RestRequest";
 
 const postSchema = {
   type: "object",
@@ -15,12 +16,20 @@ const postSchema = {
       minLength: 10,
       maxLength: 140
     },
+    category: {
+      type: "string",
+      title: "Category",
+      enum: [
+        "Bug",
+        "Request",
+        "Testing"
+      ]
+    },
     title: {
       type: "string",
       minLength: 10,
       maxLength: 140
     },
-
     issue: {
       type: "string"
     }
@@ -36,36 +45,60 @@ const uiSchema = {
   },
   password: {
     'ui:placeholder': 'password',
-    'ui:title': 'password'
+    'ui:title': 'Password'
   },
   title: {
     'ui:placeholder': 'title',
-    'ui:title': 'title'
+    'ui:title': 'Title'
   },
-  issue: { 'ui:widget': 'textarea', 'ui:options': { rows: 5 } }
+  issue: {
+    'ui:widget': 'textarea',
+    'ui:title': 'Issue',
+    'ui:options': { rows: 5 }
+  }
 }
 
 
 
-class CardComponent extends React.Component {
+class BugFormComponent extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      firstName: null,
+      lastName: null,
+      email: null,
+      password: null,
+      formErrors: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: ""
+      }
+    };
+  }
+
+
 
   onSubmit = (event) => {
-    this.setState({username: event.target.value});
+    if (event.formData) {
+      let response = RestRequest.getData(event.formData)
+      console.log(response)
+    } else {
+      console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+    }
   }
 
     render() {
         return (
-            <Column flexGrow={1} >
-                <Row horizontal="space-between">
-                    <Column>
-                        <Row>
-                          <Form onSubmit={this.onSubmit} schema={postSchema} uiSchema={uiSchema} />
-                        </Row>
-                    </Column>
-                </Row>
+            <Column>
+              <Row>
+                <Form onSubmit={this.onSubmit} schema={postSchema} uiSchema={uiSchema} />
+              </Row>
             </Column>
         );
     }
 }
 
-export default CardComponent;
+export default  BugFormComponent;

@@ -60,4 +60,5 @@ plugins/*
 src-gen/*
 yarn.lock
 package-lock.json
+src/config.js
 
