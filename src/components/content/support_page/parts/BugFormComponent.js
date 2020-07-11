@@ -81,9 +81,10 @@ class BugFormComponent extends React.Component {
 
 
 
-  onSubmit = (event) => {
+  async onSubmit(event){
     if (event.formData) {
-      let response = RestRequest.getData(event.formData)
+      let response = await RestRequest.getData(event.formData,
+        {"type" :"get_request", "get_variables": "/users/purencool"})
       console.log(response)
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");

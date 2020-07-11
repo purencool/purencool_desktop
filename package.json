@@ -15,12 +15,12 @@
   "dependencies": {
     "@rjsf/core": "^2.1.0",
     "aphrodite": "",
+    "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "cross-env": "",
     "electron-is-dev": "",
     "prop-types": "^15.7.2",
     "react": "^16.0.0",
-    "react-axios": "^2.0.3",
     "react-bootstrap": "^1.0.1",
     "react-dom": "",
     "react-router-dom": "",
