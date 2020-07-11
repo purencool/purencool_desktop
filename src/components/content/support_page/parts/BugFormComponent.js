@@ -1,11 +1,19 @@
 import React from 'react';
-import { Column, Row } from 'simple-flexbox';
 import Form from "@rjsf/core";
 import RestRequest from "../../../../api/rest_calls/RestRequest";
 
 const postSchema = {
   type: "object",
   properties: {
+    category: {
+      type: "string",
+      title: "Category",
+      enum: [
+        "Bug",
+        "Request",
+        "Testing"
+      ]
+    },
     username: {
       type: "string",
       minLength: 10,
@@ -15,15 +23,6 @@ const postSchema = {
       type: "string",
       minLength: 10,
       maxLength: 140
-    },
-    category: {
-      type: "string",
-      title: "Category",
-      enum: [
-        "Bug",
-        "Request",
-        "Testing"
-      ]
     },
     title: {
       type: "string",
@@ -86,18 +85,30 @@ class BugFormComponent extends React.Component {
       let response = await RestRequest.getData(event.formData,
         {"type" :"get_request", "get_variables": "/users/purencool"})
       console.log(response)
-    } else {
-      console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+    }
+  }
+
+  async onChange(event) {
+    if(event.formData.title !== undefined && event.formData.title.length >= 4) {
+      console.log(event.formData.title);
     }
   }
 
     render() {
         return (
-            <Column>
-              <Row>
-                <Form onSubmit={this.onSubmit} schema={postSchema} uiSchema={uiSchema} />
-              </Row>
-            </Column>
+             <div className="container pr-0 pl-0">
+              <div className="col-sm-6 float-left pl-0">
+                <div className="alert alert-primary response-text">
+                  Do you have a feature request or a bug, let us know?
+                </div>
+                <div className="form-wrapper">
+                  <Form onSubmit={this.onSubmit} onChange={this.onChange} schema={postSchema} uiSchema={uiSchema} />
+                </div>
+              </div>
+               <div className="col-sm-6 float-left pr-0">
+                 <h4>Current issues</h4>
+               </div>
+             </div>
         );
     }
 }
