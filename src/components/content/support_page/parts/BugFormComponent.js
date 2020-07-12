@@ -82,6 +82,7 @@ class BugFormComponent extends React.Component {
 
   async onSubmit(event){
     if (event.formData) {
+      console.log(event.formData);
       let response = await RestRequest.getData(event.formData,
         {"type" :"get_request", "get_variables": "/users/purencool"})
       console.log(response)
@@ -89,9 +90,12 @@ class BugFormComponent extends React.Component {
   }
 
   async onChange(event) {
-    if(event.formData.title !== undefined && event.formData.title.length >= 4) {
+    if(event.formData.title !== undefined &&
+      event.formData.title.length >= 4) {
       console.log(event.formData.title);
+      console.log(event.formData.issue);
     }
+
   }
 
     render() {
