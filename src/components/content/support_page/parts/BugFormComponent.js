@@ -100,7 +100,6 @@ class BugFormComponent extends React.Component {
 
     render() {
         return (
-             <div className="container pr-0 pl-0">
               <div className="col-sm-6 float-left pl-0">
                 <div className="alert alert-primary response-text">
                   Do you have a feature request or a bug, let us know?
@@ -109,10 +108,6 @@ class BugFormComponent extends React.Component {
                   <Form onSubmit={this.onSubmit} onChange={this.onChange} schema={postSchema} uiSchema={uiSchema} />
                 </div>
               </div>
-               <div className="col-sm-6 float-left pr-0">
-                 <h4>Current issues</h4>
-               </div>
-             </div>
         );
     }
 }

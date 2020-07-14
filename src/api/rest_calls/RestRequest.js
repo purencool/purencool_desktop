@@ -52,6 +52,16 @@ class RestRequest {
          console.log(response);
        }).finally(() => {}));
        break;
+     case 'rest_support_articles':
+       dataResponse = this.dataResponse(await axios.get(config.default_rest_support_articles+ param.get_variables).then(
+         (response) => {
+           return response.data;
+         }).catch(({response}) => {
+         this.subdomLoading = false;
+         this.subdomAvail = false;
+         console.log(response);
+       }).finally(() => {}));
+       break;
      case 'issue_request':
        dataResponse = this.dataResponse(await axios.get(config.default_rest_issues+ param.get_variables, { crossdomain: true }).then(
          (response) => {
