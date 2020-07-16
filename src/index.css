@@ -9,7 +9,8 @@
 
 
 .card-full-screen-c.display{
-  background-color: pink;
+  background: radial-gradient(ellipse farthest-corner at 1% 1%,
+  #fbfbfb .5%, #bfbfbf 10%, #fbfbfb 99%, grey);
 }
 
 body {
@@ -67,19 +68,31 @@ form label {
 
 /* display card content */
 .single-lg-col .card-full-screen.display{
-  background-color: pink;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 99999;
-}
-.single-lg-col .card-full-screen.display .card{
-   max-width: 100px;
+  width: 100%;
   text-align: center;
 }
 
+.single-lg-col .card-full-screen.display .card-wrapper{
+  display: flex;
+  justify-content: center;
+  margin:7%;
+}
 .single-lg-col .card-full-screen.display .card{
+  max-width: 40rem;
+}
 
+.single-lg-col .card-full-screen.display .card .card-title{
+  display: block;
+  text-align: left;
+}
+
+.single-lg-col .card-full-screen.display .card .card-body-contents{
+  display: block;
+  text-align: left;
 }

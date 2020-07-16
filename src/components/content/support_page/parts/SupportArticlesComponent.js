@@ -34,10 +34,12 @@ class SupportArticlesComponent extends React.Component {
             this.state.results.map(function(d, idx){
               return (
                 <div className="card-full-screen card-full-screen-c">
+                  <div className="card-wrapper">
                    <div className="card" key={idx}>
                      <a href="#" className="card-title-a" ><span className="card-title">{d.title}</span></a>
                      <span className="card-body card-body-contents"  dangerouslySetInnerHTML={{ __html: d.body }} />
                    </div>
+                  </div>
                 </div>
               )
             })
