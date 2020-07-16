@@ -1,3 +1,17 @@
+/**
+  Colors styles
+   - All colors will be variables so that they can be re-themed easily, "-c" indicates color.
+   - If no color is provided it will default to Bootstrap
+*/
+.sidebar-container-c{
+  background-color: #363740;
+}
+
+
+.card-full-screen-c.display{
+  background-color: pink;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,4 +24,62 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* sidebar container*/
+.sidebar-container{
+  position: relative;
+
+}
+
+/**
+ Form defaults
+  - All forms will not be using labels and will rely on placeholder text
+ */
+form label {
+  text-indent: -9999px;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+
+
+/**
+ Cards in a column defaults
+ */
+
+/* default display titles only */
+.single-lg-col .card{
+  padding: .5rem;
+  margin-bottom:.7rem;
+}
+.single-lg-col .card-title-a{
+  display: block;
+  width: 100%;
+}
+
+.single-lg-col .card-body-contents{
+  padding:0;
+  display: none;
+}
+
+/* display card content */
+.single-lg-col .card-full-screen.display{
+  background-color: pink;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99999;
+}
+.single-lg-col .card-full-screen.display .card{
+   max-width: 100px;
+  text-align: center;
+}
+
+.single-lg-col .card-full-screen.display .card{
+
 }

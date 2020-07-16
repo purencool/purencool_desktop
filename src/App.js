@@ -42,7 +42,6 @@ class App extends React.Component {
                 <SidebarComponent selectedItem={selectedItem} onChange={(selectedItem) => this.setState({ selectedItem })} />
                 <Column flexGrow={1} className={css(styles.mainBlock)}>
                     <HeaderComponent title={selectedItem} />
-
                     <div className={css(styles.content)}>
                       {(() => {
                          console.log(selectedItem);

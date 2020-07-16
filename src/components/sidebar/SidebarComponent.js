@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         top: 34
     },
     container: {
-        backgroundColor: '#363740',
+
         width: 255,
         paddingTop: 32,
         height: 'calc(100% - 32px)'
@@ -106,7 +106,7 @@ function SidebarComponent({ onChange, selectedItem }) {
     };
 
     return (
-        <div style={{ position: 'relative' }}>
+        <div className="sidebar-container sidebar-container-c">
             <Row
                 componentRef={element => (input1.current = element)}
                 className={css(styles.mainContainer)}

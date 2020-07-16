@@ -29,13 +29,15 @@ class SupportArticlesComponent extends React.Component {
   render() {
     return (
       <div className="col-sm-6 float-left pr-0 pl-0">
-        <div className="container">
+        <div className="single-lg-col">
           {
             this.state.results.map(function(d, idx){
               return (
-                <div className="row" key={idx}>
-                  <h5>{d.title}</h5>
-                  <div className="container"  dangerouslySetInnerHTML={{ __html: d.body }} />
+                <div className="card-full-screen card-full-screen-c">
+                   <div className="card" key={idx}>
+                     <a href="#" className="card-title-a" ><span className="card-title">{d.title}</span></a>
+                     <span className="card-body card-body-contents"  dangerouslySetInnerHTML={{ __html: d.body }} />
+                   </div>
                 </div>
               )
             })

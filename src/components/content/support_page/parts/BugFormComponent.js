@@ -9,10 +9,12 @@ const postSchema = {
       type: "string",
       title: "Category",
       enum: [
+        "Category",
         "Bug",
         "Request",
         "Testing"
-      ]
+      ],
+      default: "Category"
     },
     username: {
       type: "string",
@@ -52,6 +54,7 @@ const uiSchema = {
   },
   issue: {
     'ui:widget': 'textarea',
+    'ui:placeholder': 'Please spend some time, and be VERY descriptive about your request.',
     'ui:title': 'Issue',
     'ui:options': { rows: 5 }
   }
@@ -104,9 +107,7 @@ class BugFormComponent extends React.Component {
                 <div className="alert alert-primary response-text">
                   Do you have a feature request or a bug, let us know?
                 </div>
-                <div className="form-wrapper">
-                  <Form onSubmit={this.onSubmit} onChange={this.onChange} schema={postSchema} uiSchema={uiSchema} />
-                </div>
+                <Form className="support-form" onSubmit={this.onSubmit} onChange={this.onChange} schema={postSchema} uiSchema={uiSchema} />
               </div>
         );
     }
