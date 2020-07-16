@@ -8,9 +8,9 @@ class SupportArticlesComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles : []
-    };
-
+      loading : true,
+      results : []
+    }
   }
 
   /**
@@ -20,14 +20,27 @@ class SupportArticlesComponent extends React.Component {
   async componentDidMount() {
     let response = await RestRequest.getData("",
         {"type" :"rest_support_articles", "get_variables": ""});
-    this.setState({ articles: response });
+    if(response[0] === "success") {
+      this.setState({results: response[1]});
+      this.setState({loading: false});
+    }
   }
 
   render() {
-    console.log(this.articles)
     return (
       <div className="col-sm-6 float-left pr-0 pl-0">
-
+        <div className="container">
+          {
+            this.state.results.map(function(d, idx){
+              return (
+                <div className="row" key={idx}>
+                  <h5>{d.title}</h5>
+                  <div className="container"  dangerouslySetInnerHTML={{ __html: d.body }} />
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
     );
   }

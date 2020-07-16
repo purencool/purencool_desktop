@@ -59,7 +59,6 @@ class RestRequest {
          }).catch(({response}) => {
          this.subdomLoading = false;
          this.subdomAvail = false;
-         console.log(response);
        }).finally(() => {}));
        break;
      case 'issue_request':
