@@ -13,6 +13,45 @@
   #fbfbfb .5%, #bfbfbf 10%, #fbfbfb 99%, grey);
 }
 
+div a,
+div a:hover,
+div a:active,
+div a:focus{
+ color:#337ab7;
+}
+
+
+body{
+  color:#444444;
+}
+
+/**
+  Default scroll bars
+ */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  margin-left: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -66,6 +105,12 @@ form label {
   display: none;
 }
 
+.single-lg-col .card-close-a{
+  display: none;
+  float:right;
+  padding:20px 20px 0 0;
+}
+
 /* display card content */
 .single-lg-col .card-full-screen.display{
   position: fixed;
@@ -78,13 +123,31 @@ form label {
   text-align: center;
 }
 
+.single-lg-col .card-full-screen.display .card-close-a{
+  display: block;
+}
+
 .single-lg-col .card-full-screen.display .card-wrapper{
   display: flex;
   justify-content: center;
-  margin:7%;
+  margin:30% 5% 0 5%;
+
 }
+
+@media only screen and (min-width: 450px) {
+  .single-lg-col .card-full-screen.display .card-wrapper{
+    margin:20% 5% 0 5%;
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .single-lg-col .card-full-screen.display .card-wrapper{
+    margin:10% 5% 0 5%;
+  }
+}
+
 .single-lg-col .card-full-screen.display .card{
-  max-width: 40rem;
+  max-width: 60rem;
 }
 
 .single-lg-col .card-full-screen.display .card .card-title{
@@ -95,4 +158,38 @@ form label {
 .single-lg-col .card-full-screen.display .card .card-body-contents{
   display: block;
   text-align: left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 200px;
+}
+
+@media only screen and (min-height: 350px) {
+  .single-lg-col .card-full-screen.display .card .card-body-contents{
+    height: 275px;
+  }
+}
+
+@media only screen and (min-height: 450px) {
+  .single-lg-col .card-full-screen.display .card .card-body-contents{
+    height: 400px;
+  }
+}
+
+
+@media only screen and (min-height: 550px) {
+  .single-lg-col .card-full-screen.display .card .card-body-contents{
+    height: 500px;
+  }
+}
+
+@media only screen and (min-height: 750px) {
+  .single-lg-col .card-full-screen.display .card .card-body-contents{
+    height: 600px;
+  }
+}
+
+@media only screen and (min-height: 850px) {
+  .single-lg-col .card-full-screen.display .card .card-body-contents{
+    height: 700px;
+  }
 }
