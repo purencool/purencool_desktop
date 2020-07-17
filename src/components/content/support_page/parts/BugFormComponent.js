@@ -104,10 +104,12 @@ class BugFormComponent extends React.Component {
     render() {
         return (
               <div className="col-sm-6 float-left pl-0">
+
                 <div className="alert alert-primary response-text">
                   Do you have a feature request or a bug, let us know?
                 </div>
                 <Form className="support-form" onSubmit={this.onSubmit} onChange={this.onChange} schema={postSchema} uiSchema={uiSchema} />
+
               </div>
         );
     }
