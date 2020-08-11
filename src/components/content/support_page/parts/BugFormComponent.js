@@ -61,7 +61,9 @@ const uiSchema = {
 }
 
 
-
+/**
+ *
+ */
 class BugFormComponent extends React.Component {
 
   constructor(props) {
@@ -82,7 +84,11 @@ class BugFormComponent extends React.Component {
   }
 
 
-
+  /**
+   *
+   * @param event
+   * @returns {Promise<void>}
+   */
   async onSubmit(event){
     if (event.formData) {
       console.log(event.formData);
@@ -92,6 +98,11 @@ class BugFormComponent extends React.Component {
     }
   }
 
+  /**
+   *
+   * @param event
+   * @returns {Promise<void>}
+   */
   async onChange(event) {
     if(event.formData.title !== undefined &&
       event.formData.title.length >= 4) {
@@ -103,14 +114,9 @@ class BugFormComponent extends React.Component {
 
     render() {
         return (
-              <div className="col-sm-6 float-left pl-0">
-
-                <div className="alert alert-primary response-text">
-                  Do you have a feature request or a bug, let us know?
-                </div>
-                <Form className="support-form" onSubmit={this.onSubmit} onChange={this.onChange} schema={postSchema} uiSchema={uiSchema} />
-
-              </div>
+          <div className="col-sm-6 float-left pl-0">
+            <Form className="support-form" onSubmit={this.onSubmit} onChange={this.onChange} schema={postSchema} uiSchema={uiSchema} />
+          </div>
         );
     }
 }

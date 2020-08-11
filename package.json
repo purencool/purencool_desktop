@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "concurrently": "",
+    "cypress": "^4.12.1",
     "electron": "",
     "electron-builder": "",
     "wait-on": ""
