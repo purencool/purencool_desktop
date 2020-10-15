@@ -29,6 +29,13 @@ npm run start
 ```
 npm run build
 ```
+
+## Testing
+```
+$(npm bin)/cypress run
+```
+
+
 2. Go into your project folder using your file explorer. Navigate to the `dist` folder and open it. Then double-click `<your-project-name>` Setup 0.1.0. Your app should open and there should now be an icon on your desktop for this app.
 
 **Use a Custom Icon**
