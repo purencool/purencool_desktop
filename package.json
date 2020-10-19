@@ -23,6 +23,7 @@
   "scripts": {
     "start-react": "react-scripts start",
     "build-react": "react-scripts build",
+    "production-build": "mv build ./www/",
     "test-react": "react-scripts test --env=jsdom",
     "eject-react": "react-scripts eject",
     "build": "npm run build-react",

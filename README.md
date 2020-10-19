@@ -12,10 +12,15 @@ npm run start
 ## Deploy to production
 
 
-## Run testing Testing
+## Run Testing
 ```
 $(npm bin)/cypress run
 ```
 
+### Build production 
+
+```
+ npm run build
+```
 
 
