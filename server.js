@@ -78,4 +78,4 @@ http.createServer(function(req, res){
   }
 
 }).listen(port,host);
-
+console.log('http://'+host+':'+port);
